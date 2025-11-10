@@ -125,7 +125,7 @@ Logaritma diskrit adalah kebalikan dari operasi perpangkatan modular. Dalam cont
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
+
 - Pertanyaan 1:Apa peran aritmetika modular dalam kriptografi modern?
 Aritmetika modular menjadi dasar sistem kriptografi berbasis teori bilangan seperti RSA, Diffie-Hellman, ElGamal, dan ECC. Ia membatasi ruang bilangan agar operasi tetap efisien secara komputasional, menciptakan struktur siklik yang tidak mudah diprediksi, dan memungkinkan operasi seperti perpangkatan modular yang mudah dihitung tetapi sulit dibalik. Dengan demikian, keamanan sistem kripto tidak bergantung pada kerahasiaan algoritma, melainkan pada sifat matematis fungsi satu arah dalam sistem modular.
 - Pertanyaan 2: Mengapa invers modular penting dalam algoritma kunci publik (misalnya RSA)?
