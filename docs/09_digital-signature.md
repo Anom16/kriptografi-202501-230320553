@@ -85,9 +85,11 @@ except (ValueError, TypeError):
 ---
 
 ## Pertanyaan Diskusi
-1. Apa perbedaan utama antara enkripsi RSA dan tanda tangan digital RSA?  
-2. Mengapa tanda tangan digital menjamin integritas dan otentikasi pesan?  
-3. Bagaimana peran Certificate Authority (CA) dalam sistem tanda tangan digital modern?  
+1. Perbedaan utama antara enkripsi RSA dan tanda tangan digital RSA terletak pada tujuan dan penggunaan kuncinya. Enkripsi RSA digunakan untuk menjaga kerahasiaan pesan, di mana pesan dienkripsi menggunakan kunci publik penerima dan hanya dapat didekripsi dengan kunci privat penerima. Sebaliknya, tanda tangan digital RSA digunakan untuk menjamin keaslian dan keutuhan pesan, di mana pesan (atau nilai hash pesan) ditandatangani menggunakan kunci privat pengirim dan diverifikasi menggunakan kunci publik pengirim.
+
+2. Tanda tangan digital menjamin integritas dan otentikasi pesan karena tanda tangan dibuat berdasarkan isi pesan dan kunci privat pengirim. Jika pesan diubah, nilai hash yang dihasilkan akan berbeda sehingga proses verifikasi tanda tangan akan gagal. Selain itu, karena hanya pemilik kunci privat yang dapat membuat tanda tangan yang valid, penerima dapat memastikan bahwa pesan benar-benar berasal dari pengirim yang sah.
+
+3. Certificate Authority (CA) berperan sebagai pihak tepercaya yang mengaitkan identitas suatu entitas dengan kunci publiknya melalui sertifikat digital. CA melakukan verifikasi identitas sebelum menerbitkan sertifikat, sehingga kunci publik yang digunakan dalam proses verifikasi tanda tangan dapat dipercaya. Dengan adanya CA, penerima tidak hanya memverifikasi tanda tangan digital, tetapi juga yakin bahwa kunci publik tersebut benar-benar milik pihak yang mengklaim sebagai pengirim.
 
 ---
 
