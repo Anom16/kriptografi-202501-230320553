@@ -67,31 +67,25 @@ print("Recovered secret:", recovered)
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+Hasil percobaan menunjukkan bahwa skema Shamir’s Secret Sharing mampu membagi sebuah rahasia menjadi beberapa bagian (share) tanpa mengungkapkan nilai rahasia itu sendiri. Setiap share yang dihasilkan berdiri sendiri dan tidak memberikan informasi berarti apabila dilihat secara terpisah. Hal ini membuktikan bahwa mekanisme pembagian rahasia bekerja sesuai dengan prinsip keamanan, di mana tidak ada satu pihak pun yang memiliki akses penuh terhadap rahasia.
 
-Hasil eksekusi program Caesar Cipher:
+Pada tahap rekonstruksi, rahasia hanya dapat dikembalikan ketika jumlah share yang digunakan memenuhi nilai threshold yang telah ditentukan. Ketika share yang digabungkan kurang dari threshold, proses rekonstruksi gagal dan rahasia tidak dapat diperoleh. Sebaliknya, saat jumlah share mencukupi, rahasia berhasil direkonstruksi secara utuh, yang menunjukkan bahwa skema ini menjamin kontrol akses berbasis jumlah pihak yang berwenang.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Pembahasan ini menegaskan bahwa Shamir’s Secret Sharing efektif dalam mengurangi risiko kebocoran dan single point of failure. Dengan membagi rahasia ke beberapa pihak, sistem menjadi lebih aman dan andal, terutama untuk pengelolaan kunci kriptografi dan informasi sensitif yang membutuhkan kolaborasi serta tingkat kepercayaan tinggi antar pihak.
 
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Keuntungan utama Shamir Secret Sharing adalah rahasia tidak pernah disimpan atau dibagikan dalam bentuk utuh kepada satu pihak. Berbeda dengan membagikan salinan kunci secara langsung yang berisiko bocor jika satu pihak disusupi, SSS memastikan bahwa satu atau beberapa bagian saja tidak cukup untuk mengetahui rahasia, sehingga tingkat keamanannya jauh lebih tinggi.
+
+2. Threshold (k) berperan sebagai batas minimum jumlah share yang harus digabungkan untuk merekonstruksi rahasia. Selama jumlah share yang dimiliki kurang dari k, rahasia tetap aman dan tidak dapat ditebak, sehingga threshold menjadi mekanisme utama yang mengontrol keseimbangan antara keamanan dan ketersediaan akses.
+
+3. Contoh skenario nyata penggunaan SSS adalah penyimpanan kunci utama server perusahaan, di mana kunci dibagi kepada beberapa manajer. Kunci tersebut hanya dapat digunakan jika minimal sejumlah manajer tertentu hadir dan menyetujui, sehingga mencegah penyalahgunaan oleh satu orang dan mengurangi risiko kehilangan akses akibat satu titik kegagalan.
+
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
----
+hamir’s Secret Sharing merupakan metode yang efektif untuk melindungi rahasia dengan cara membaginya ke dalam beberapa bagian sehingga tidak ada satu pihak pun yang memegang rahasia secara utuh. Penggunaan threshold memastikan bahwa hanya pihak yang berwenang dan memenuhi jumlah minimum tertentu yang dapat merekonstruksi rahasia. Dengan demikian, skema ini meningkatkan keamanan sekaligus keandalan dalam pengelolaan informasi sensitif.
 
 ## 9. Daftar Pustaka
 (Cantumkan referensi yang digunakan.  
@@ -105,9 +99,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit anom
+Author: Anom Pangestu
+Date:   2026-01
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week11-cryptosystem: secret sharing )
 ```
